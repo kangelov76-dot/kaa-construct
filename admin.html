@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Админ | KAA Метални Конструкции</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">KAA</span>
+      <span>KAA Метални Конструкции</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Начало</a>
+      <a href="services.html">Услуги</a>
+      <a href="gallery.html">Галерия</a>
+      <a href="contacts.html">Контакти</a>
+      <a class="nav-request" href="request.html">Запитване</a>
+      <a class="active" href="admin.html">Админ</a>
+    </nav>
+
+    <a class="btn mobile-menu" href="index.html">Към сайта</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Админ панел</h1>
+      <p>Преглед на реалните заявки от Netlify Forms.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="admin-card admin-login" id="adminLogin">
+        <h2>Вход</h2>
+        <p class="form-hint">Въведи админ парола за достъп до заявките.</p>
+
+        <label>
+          Парола
+          <input id="adminPassword" type="password" autocomplete="current-password" placeholder="Парола">
+        </label>
+
+        <button class="btn" id="adminLoginBtn" type="button">Вход</button>
+
+        <p class="form-hint" id="adminLoginMsg"></p>
+      </div>
+
+      <div id="adminApp" class="hidden">
+
+        <div class="admin-head">
+          <div>
+            <h1>Заявки</h1>
+            <p>Реални submissions от Netlify Forms.</p>
+          </div>
+
+          <div class="mini-actions">
+            <button class="btn secondary" id="refreshAdmin" type="button">Обнови</button>
+            <button class="btn secondary" id="adminLogout" type="button">Изход</button>
+          </div>
+        </div>
+
+        <div class="admin-metrics">
+          <div>
+            <b id="metricTotal">0</b>
+            <span>Общо заявки</span>
+          </div>
+          <div>
+            <b id="metricToday">0</b>
+            <span>Днес</span>
+          </div>
+          <div>
+            <b id="metricPhotos">0</b>
+            <span>Със снимки</span>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <h2>Списък със заявки</h2>
+          <div id="adminStatus" class="form-hint">Зареждане...</div>
+          <div id="submissionsList"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <b>KAA Метални Конструкции</b><br>
+      Админ панел
+    </div>
+
+    <div>
+      <a class="footer-link" href="index.html">Към сайта</a>
+    </div>
+  </div>
+</footer>
+
+<script src="admin.js"></script>
+</body>
+</html>

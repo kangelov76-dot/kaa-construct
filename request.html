@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Запитване | KAA Метални Конструкции</title>
+  <meta name="description" content="Изпратете запитване за метална конструкция, навес, ограда, портал, стълби, гараж или зимна градина.">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<form name="kaa_request" netlify netlify-honeypot="bot-field" hidden enctype="multipart/form-data">
+  <input type="hidden" name="form-name" value="kaa_request">
+  <input name="bot-field">
+
+  <input type="text" name="name">
+  <input type="text" name="phone">
+  <input type="email" name="email">
+  <input type="text" name="type">
+  <input type="text" name="stage">
+  <input type="text" name="width">
+  <input type="text" name="length">
+  <input type="text" name="height">
+  <input type="text" name="existing">
+  <input type="text" name="location">
+  <input type="text" name="deadline">
+  <input type="text" name="budget">
+  <input type="text" name="contact_method">
+  <textarea name="message"></textarea>
+
+  <input type="file" name="photo_1">
+  <input type="file" name="photo_2">
+  <input type="file" name="photo_3">
+  <input type="file" name="photo_4">
+  <input type="file" name="photo_5">
+  <input type="file" name="photo_6">
+  <input type="file" name="photo_7">
+  <input type="file" name="photo_8">
+  <input type="file" name="photo_9">
+  <input type="file" name="photo_10">
+</form>
+
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">KAA</span>
+      <span>KAA Метални Конструкции</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Начало</a>
+      <a href="services.html">Услуги</a>
+      <a href="gallery.html">Галерия</a>
+      <a href="contacts.html">Контакти</a>
+      <a class="nav-request active" href="request.html">Запитване</a>
+      <a class="btn" href="tel:+359877080781">0877 080 781</a>
+    </nav>
+
+    <a class="btn mobile-menu" href="tel:+359877080781">Обади се</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Изпрати запитване</h1>
+      <p>Попълнете кратката форма. Повечето въпроси са с избор, за да е лесно дори без технически познания.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="form-notice">
+        <b>Важно:</b> формата се записва през Netlify Forms. За имейл известия активирайте уведомление към k.angelov76@gmail.com в Netlify → Forms.
+      </div>
+
+      <form class="request-form" id="requestForm" name="kaa_request" method="POST" netlify data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" action="thanks.html">
+        <input type="hidden" name="form-name" value="kaa_request">
+
+        <p class="hidden">
+          <label>Не попълвайте: <input name="bot-field"></label>
+        </p>
+
+        <div class="form-step">
+          <span class="badge">1</span>
+          <h2>Какво желаете?</h2>
+
+          <div class="option-grid project-options">
+            <label><input type="checkbox" name="type" value="Навес"><span>🏠 Навес</span></label>
+            <label><input type="checkbox" name="type" value="Зимна градина"><span>🌿 Зимна градина</span></label>
+            <label><input type="checkbox" name="type" value="Ограда"><span>🚧 Ограда</span></label>
+            <label><input type="checkbox" name="type" value="Портал / Врата"><span>🚪 Портал / Врата</span></label>
+            <label><input type="checkbox" name="type" value="Стълби"><span>🪜 Стълби</span></label>
+            <label><input type="checkbox" name="type" value="Платформа / Веранда"><span>🏗 Платформа / Веранда</span></label>
+            <label><input type="checkbox" name="type" value="Гараж"><span>🚗 Гараж</span></label>
+            <label><input type="checkbox" name="type" value="Къща с метална конструкция"><span>🏡 Къща с метална конструкция</span></label>
+            <label><input type="checkbox" name="type" value="Друго"><span>📐 Друго</span></label>
+          </div>
+        </div>
+
+        <div class="form-step">
+          <span class="badge">2</span>
+          <h2>На какъв етап е обектът?</h2>
+
+          <div class="option-grid">
+            <label><input type="radio" name="stage" value="Само идея"><span>Само идея</span></label>
+            <label><input type="radio" name="stage" value="Имам скица"><span>Имам скица</span></label>
+            <label><input type="radio" name="stage" value="Имам проект"><span>Имам проект</span></label>
+            <label><input type="radio" name="stage" value="Има съществуваща конструкция"><span>Има съществуваща конструкция</span></label>
+            <label><input type="radio" name="stage" value="Трябва оглед"><span>Трябва оглед</span></label>
+          </div>
+        </div>
+
+        <div class="form-step">
+          <span class="badge">3</span>
+          <h2>Приблизителни размери</h2>
+          <p class="form-hint">Може да оставите празно, ако не знаете точните размери.</p>
+
+          <div class="field-grid">
+            <label>Ширина<input name="width" placeholder="пример: 4 м"></label>
+            <label>Дължина<input name="length" placeholder="пример: 6 м"></label>
+            <label>Височина<input name="height" placeholder="пример: 2.6 м"></label>
+          </div>
+        </div>
+
+        <div class="form-step">
+          <span class="badge">4</span>
+          <h2>Има ли съществуваща конструкция?</h2>
+
+          <div class="option-grid">
+            <label><input type="radio" name="existing" value="Да"><span>Да</span></label>
+            <label><input type="radio" name="existing" value="Не"><span>Не</span></label>
+            <label><input type="radio" name="existing" value="Частично"><span>Частично</span></label>
+            <label><input type="radio" name="existing" value="Не знам"><span>Не знам</span></label>
+          </div>
+        </div>
+
+        <div class="form-step">
+          <span class="badge">5</span>
+          <h2>Къде се намира обектът?</h2>
+
+          <div class="field-grid">
+            <label>Населено място<input name="location" placeholder="София, Драгалевци, Вакарел..."></label>
+
+            <label>Желан срок
+              <select name="deadline">
+                <option>Само проучвам</option>
+                <option>Възможно най-скоро</option>
+                <option>До 1 месец</option>
+                <option>До 3 месеца</option>
+                <option>Няма спешност</option>
+              </select>
+            </label>
+
+            <label>Ориентировъчен бюджет<input name="budget" placeholder="по желание"></label>
+          </div>
+        </div>
+
+        <div class="form-step">
+          <span class="badge">6</span>
+          <h2>Качете снимки или скица</h2>
+          <p class="form-hint">Снимки на мястото, приблизителна скица, проект или примерна визия.</p>
+
+          <div class="upload-widget" data-max-files="10">
+
+            <input id="photosInput" type="file" accept="image/*,.pdf" multiple hidden>
+
+            <input class="file-input upload-input" type="file" name="photo_1" accept="image/*,.pdf">
+            <input class="file-input upload-input" type="file" name="photo_2" accept="image/*,.pdf">
+            <input class="file-input upload-input" type="file" name="photo_3" accept="image/*,.pdf">
+            <input class="file-input upload-input" type="file" name="photo_4" accept="image/*,.pdf">
+            <input class="file-input upload-input" type="file" name="photo_5" accept="image/*,.pdf">
+            <input class="file-input upload-input" type="file" name="photo_6" accept="image/*,.pdf">
+            <input class="file-input upload-input" type="file" name="photo_7" accept="image/*,.pdf">
+            <input class="file-input upload-input" type="file" name="photo_8" accept="image/*,.pdf">
+            <input class="file-input upload-input" type="file" name="photo_9" accept="image/*,.pdf">
+            <input class="file-input upload-input" type="file" name="photo_10" accept="image/*,.pdf">
+
+            <label class="upload-button" for="photosInput">
+              <span class="upload-icon">↥</span>
+              <span>Избор на файлове</span>
+            </label>
+
+            <div class="upload-status" id="uploadStatus">Няма избран файл</div>
+
+            <div class="upload-grid" id="uploadGrid" aria-label="Качени снимки">
+              <button type="button" class="upload-slot upload-empty" data-index="0"><span class="slot-icon">⬇</span><span>Няма избран файл</span></button>
+              <button type="button" class="upload-slot upload-empty" data-index="1"><span class="slot-icon">⬇</span><span>Няма избран файл</span></button>
+              <button type="button" class="upload-slot upload-empty" data-index="2"><span class="slot-icon">⬇</span><span>Няма избран файл</span></button>
+              <button type="button" class="upload-slot upload-empty" data-index="3"><span class="slot-icon">⬇</span><span>Няма избран файл</span></button>
+              <button type="button" class="upload-slot upload-empty" data-index="4"><span class="slot-icon">⬇</span><span>Няма избран файл</span></button>
+              <button type="button" class="upload-slot upload-empty" data-index="5"><span class="slot-icon">⬇</span><span>Няма избран файл</span></button>
+              <button type="button" class="upload-slot upload-empty" data-index="6"><span class="slot-icon">⬇</span><span>Няма избран файл</span></button>
+              <button type="button" class="upload-slot upload-empty" data-index="7"><span class="slot-icon">⬇</span><span>Няма избран файл</span></button>
+              <button type="button" class="upload-slot upload-empty" data-index="8"><span class="slot-icon">⬇</span><span>Няма избран файл</span></button>
+              <button type="button" class="upload-slot upload-empty" data-index="9"><span class="slot-icon">⬇</span><span>Няма избран файл</span></button>
+            </div>
+
+            <p class="form-hint upload-hint">Можете да качите до 10 снимки/файла. Натиснете върху миниатюра, за да я премахнете.</p>
+          </div>
+        </div>
+
+        <div class="form-step">
+          <span class="badge">7</span>
+          <h2>Данни за контакт</h2>
+
+          <div class="field-grid">
+            <label>Име<input name="name" required placeholder="Вашето име"></label>
+            <label>Телефон<input name="phone" required placeholder="Телефон за връзка"></label>
+            <label>Имейл<input name="email" type="email" placeholder="по желание"></label>
+
+            <label>Предпочитам връзка
+              <select name="contact_method">
+                <option>Телефон</option>
+                <option>Viber</option>
+                <option>WhatsApp</option>
+                <option>Имейл</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="full-field">Допълнително описание
+            <textarea name="message" rows="5" placeholder="Кратко описание, ако има нещо важно..."></textarea>
+          </label>
+        </div>
+
+        <button class="btn submit-btn" type="submit">Изпрати запитване</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <b>KAA Метални Конструкции</b><br>
+      Изработка и монтаж на метални конструкции<br>
+      <a class="footer-link" href="request.html">Изпрати запитване</a> ·
+      <a class="footer-link facebook-link" href="https://www.facebook.com/profile.php?id=61590696717235" target="_blank" rel="noopener">Facebook</a>
+    </div>
+
+    <div>
+      София и страната · <a href="tel:+359877080781">0877 080 781</a><br>
+      <a href="https://kaa-construct.netlify.app">kaa-construct.netlify.app</a>
+    </div>
+
+    <div>
+      <a class="footer-link" href="admin.html">Админ</a>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox">
+  <span class="close">×</span>
+  <img src="" alt="">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
