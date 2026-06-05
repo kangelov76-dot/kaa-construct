@@ -153,6 +153,7 @@ function prepareMetricButtons(){
     if(index === 0) box.dataset.filter = 'all';
     if(index === 1) box.dataset.filter = 'today';
     if(index === 2) box.dataset.filter = 'photos';
+    if(index === 3) box.dataset.filter = 'unseen';
 
     box.addEventListener('click', () => {
       activeFilter = box.dataset.filter || 'all';
@@ -175,9 +176,14 @@ function renderMetrics(rows){
     return getPhotos(data).length > 0;
   }).length;
 
+  const unseenCount = rows.filter(r => readStatus(r.id) === 'new').length;
+
   document.getElementById('metricTotal').textContent = rows.length;
   document.getElementById('metricToday').textContent = todayCount;
   document.getElementById('metricPhotos').textContent = withPhotos;
+
+  const unseenEl = document.getElementById('metricUnseen');
+  if(unseenEl) unseenEl.textContent = unseenCount;
 }
 
 function getFilteredRows(){
@@ -189,6 +195,10 @@ function getFilteredRows(){
     return allRows.filter(r => getPhotos(r.data || {}).length > 0);
   }
 
+  if(activeFilter === 'unseen'){
+    return allRows.filter(r => readStatus(r.id) === 'new');
+  }
+
   return allRows;
 }
 
@@ -198,11 +208,13 @@ function renderFiltered(){
   const label = {
     all: 'Всички заявки',
     today: 'Заявки от днес',
-    photos: 'Заявки със снимки'
-  }[activeFilter];
+    photos: 'Заявки със снимки',
+    unseen: 'Непрегледани заявки'
+  }[activeFilter] || 'Всички заявки';
 
   statusBox.textContent = `${label}: ${rows.length}`;
 
+  renderMetrics(allRows);
   renderSubmissions(rows);
 }
 
